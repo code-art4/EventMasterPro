@@ -89,8 +89,8 @@ export default function Navbar() {
                       <DropdownMenuTrigger asChild>
                         <Button variant="ghost" className="relative rounded-full h-8 w-8 flex items-center justify-center overflow-hidden">
                           <Avatar>
-                            <AvatarImage src={user?.avatarUrl} alt={user?.username} />
-                            <AvatarFallback>{user?.username?.charAt(0).toUpperCase()}</AvatarFallback>
+                            <AvatarImage src={user?.avatarUrl || ""} alt={user?.username || ""} />
+                            <AvatarFallback>{user?.username?.charAt(0)?.toUpperCase() || "U"}</AvatarFallback>
                           </Avatar>
                         </Button>
                       </DropdownMenuTrigger>
@@ -161,8 +161,8 @@ export default function Navbar() {
                 <div className="flex items-center px-4">
                   <div className="flex-shrink-0">
                     <Avatar>
-                      <AvatarImage src={user?.avatarUrl} alt={user?.username} />
-                      <AvatarFallback>{user?.username?.charAt(0).toUpperCase()}</AvatarFallback>
+                      <AvatarImage src={user?.avatarUrl || ""} alt={user?.username || ""} />
+                      <AvatarFallback>{user?.username?.charAt(0)?.toUpperCase() || "U"}</AvatarFallback>
                     </Avatar>
                   </div>
                   <div className="ml-3">
