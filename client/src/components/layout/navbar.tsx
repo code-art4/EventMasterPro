@@ -199,14 +199,14 @@ export default function Navbar() {
             ) : (
               <div className="mt-3 space-y-1 px-4">
                 <Link 
-                  href="/login" 
+                  href="/auth" 
                   className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100 rounded-md"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Log in
                 </Link>
                 <Link 
-                  href="/register" 
+                  href="/auth" 
                   className="block px-4 py-2 text-base font-medium bg-primary-600 text-white rounded-md hover:bg-primary-700"
                   onClick={() => setMobileMenuOpen(false)}
                 >
