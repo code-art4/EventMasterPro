@@ -12,8 +12,7 @@ import MyTickets from "./pages/my-tickets";
 import CreateEvent from "./pages/create-event";
 import Dashboard from "./pages/dashboard";
 import Checkout from "./pages/checkout";
-import Login from "./pages/login";
-import Register from "./pages/register";
+import AuthPage from "./pages/auth-page";
 import NotFound from "./pages/not-found";
 import { useEffect, useState } from "react";
 import { User } from "@shared/schema";
@@ -74,8 +73,7 @@ function Router() {
             <Route path="/create-event" component={CreateEvent} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/checkout/:eventId" component={Checkout} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
+            <Route path="/auth" component={AuthPage} />
             <Route component={NotFound} />
           </Switch>
         </main>
