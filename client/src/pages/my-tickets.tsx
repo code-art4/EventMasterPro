@@ -29,9 +29,11 @@ export default function MyTickets() {
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <Skeleton className="h-10 w-48 mb-6" />
         <div className="space-y-6">
-          {Array(3).fill(0).map((_, index) => (
-            <Skeleton key={index} className="h-64 w-full" />
-          ))}
+          {Array(3)
+            .fill(0)
+            .map((_, index) => (
+              <Skeleton key={index} className="h-64 w-full" />
+            ))}
         </div>
       </div>
     );
@@ -43,8 +45,10 @@ export default function MyTickets() {
 
   // Filter tickets into upcoming and past events
   const now = new Date();
-  const upcomingPurchases = purchases?.filter(p => new Date(p.event.endDate) >= now) || [];
-  const pastPurchases = purchases?.filter(p => new Date(p.event.endDate) < now) || [];
+  const upcomingPurchases =
+    purchases?.filter((p) => new Date(p.event.endDate) >= now) || [];
+  const pastPurchases =
+    purchases?.filter((p) => new Date(p.event.endDate) < now) || [];
 
   return (
     <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -70,9 +74,11 @@ export default function MyTickets() {
         <TabsContent value="upcoming">
           {isLoading ? (
             <div className="space-y-6">
-              {Array(2).fill(0).map((_, index) => (
-                <Skeleton key={index} className="h-64 w-full" />
-              ))}
+              {Array(2)
+                .fill(0)
+                .map((_, index) => (
+                  <Skeleton key={index} className="h-64 w-full" />
+                ))}
             </div>
           ) : upcomingPurchases.length > 0 ? (
             <div className="space-y-6">
@@ -83,12 +89,14 @@ export default function MyTickets() {
           ) : (
             <div className="text-center py-16 bg-gray-50 rounded-lg">
               <Ticket className="mx-auto h-12 w-12 text-gray-400" />
-              <h3 className="mt-2 text-lg font-medium text-gray-900">No Upcoming Events</h3>
-              <p className="mt-1 text-sm text-gray-500">You don't have any upcoming events.</p>
+              <h3 className="mt-2 text-lg font-medium text-gray-900">
+                No Upcoming Events
+              </h3>
+              <p className="mt-1 text-sm text-gray-500">
+                You don't have any upcoming events.
+              </p>
               <div className="mt-6">
-                <Button onClick={() => setLocation("/")}>
-                  Browse Events
-                </Button>
+                <Button onClick={() => setLocation("/")}>Browse Events</Button>
               </div>
             </div>
           )}
@@ -97,9 +105,11 @@ export default function MyTickets() {
         <TabsContent value="past">
           {isLoading ? (
             <div className="space-y-6">
-              {Array(2).fill(0).map((_, index) => (
-                <Skeleton key={index} className="h-64 w-full" />
-              ))}
+              {Array(2)
+                .fill(0)
+                .map((_, index) => (
+                  <Skeleton key={index} className="h-64 w-full" />
+                ))}
             </div>
           ) : pastPurchases.length > 0 ? (
             <div className="space-y-6">
@@ -110,12 +120,14 @@ export default function MyTickets() {
           ) : (
             <div className="text-center py-16 bg-gray-50 rounded-lg">
               <Ticket className="mx-auto h-12 w-12 text-gray-400" />
-              <h3 className="mt-2 text-lg font-medium text-gray-900">No Past Events</h3>
-              <p className="mt-1 text-sm text-gray-500">You haven't attended any events yet.</p>
+              <h3 className="mt-2 text-lg font-medium text-gray-900">
+                No Past Events
+              </h3>
+              <p className="mt-1 text-sm text-gray-500">
+                You haven't attended any events yet.
+              </p>
               <div className="mt-6">
-                <Button onClick={() => setLocation("/")}>
-                  Browse Events
-                </Button>
+                <Button onClick={() => setLocation("/")}>Browse Events</Button>
               </div>
             </div>
           )}
