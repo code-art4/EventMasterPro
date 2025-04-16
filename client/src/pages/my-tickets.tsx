@@ -39,9 +39,9 @@ export default function MyTickets() {
     );
   }
 
-  if (!isAuthenticated) {
-    return null; // Will redirect to login
-  }
+  // if (!isAuthenticated) {
+  //   return null; // Will redirect to login
+  // }
 
   // Filter tickets into upcoming and past events
   const now = new Date();
